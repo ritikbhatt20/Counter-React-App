@@ -1,0 +1,17 @@
+The component goes through 3 phases during its lifecycle..
+1- Mount - When an instance of a component is created and inserted into a dom.. 
+There are a few special methods that we can add to our components.. These are called lifecycle hooks.. React will automatically call these methods..
+These methods allow us to hook into certain moments during the lifecycle of a component and do something
+
+-> constructor
+-> render
+-> componentDidMount
+
+2- UPDATE
+
+-> render
+-> componentDidUpdate
+
+3- UNMOUNT
+
+-> componentDidUnmount

@@ -13,6 +13,18 @@ class App extends Component {
       { id: 4, value: 0 },
     ],
   };
+  
+  // this is the first method in mount phase.. this method is called only one time when an instance of component class is created
+  constructor(props) {
+    super(props);
+    console.log("App-Constructor");
+    // console.log("props", this.props)
+  }
+
+  // called after render fn when the component is mounted and inserted into the DOM
+  componentDidMount() {
+    console.log("App-Mounted");
+  }
 
   handleIncrement = (counterId) => {
     const counters = this.state.counters.map((c) => {
@@ -36,10 +48,14 @@ class App extends Component {
     });
     this.setState({ counters });
   };
+
   render() {
+    console.log("App-rendered");
     return (
       <React.Fragment>
-        <NavBar totalCounters={this.state.counters.filter(c => c.value>0).length}/>
+        <NavBar
+          totalCounters={this.state.counters.filter((c) => c.value > 0).length}
+        />
         <main className="container">
           <Counters
             counters={this.state.counters}
